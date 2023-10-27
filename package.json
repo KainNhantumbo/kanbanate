@@ -14,6 +14,8 @@
     "classnames": "^2.3.2",
     "date-fns": "^2.30.0",
     "day-picker-react": "^1.0.1",
+    "dexie": "^3.2.4",
+    "dexie-react-hooks": "^1.1.6",
     "framer-motion": "^10.16.4",
     "lodash.isequal": "^4.5.0",
     "moment": "^2.29.4",
