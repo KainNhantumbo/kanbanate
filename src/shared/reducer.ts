@@ -1,4 +1,4 @@
-import { actions } from './actions';
+import actions from './actions';
 import { Action, State } from '@/types';
 
 export const initialState: State = {};

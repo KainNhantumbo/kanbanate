@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { BarLoader } from 'react-spinners';
+import { DotLoader } from 'react-spinners';
 import { useTheme } from 'styled-components';
 
 const styles: CSSProperties = {
@@ -19,7 +19,7 @@ export default function Loader() {
   return (
     <section style={{ ...styles }}>
       <h3>Loading... just a moment...</h3>
-      <BarLoader
+      <DotLoader
         color={`rgb(${theme.primary_a})`}
         cssOverride={{
           display: 'block',
