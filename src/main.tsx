@@ -3,7 +3,7 @@ import 'rc-dropdown/assets/index.css';
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
-// import AppContext from './context/AppContext';
+import AppContext from './context/AppContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Loader from './components/Loader';
 
@@ -13,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Suspense fallback={<Loader />}>
       <Router>
-        <AppRouter />
+        <AppContext>
+          <AppRouter />
+        </AppContext>
       </Router>
     </Suspense>
   </React.StrictMode>
