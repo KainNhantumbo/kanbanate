@@ -1,8 +1,39 @@
 {
   "name": "kanbanate",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "url": "",
+  "website_name": "kanbanate demo",
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "author": {
+    "name": "Kain Nhantumbo",
+    "email": "nhantumbok@gmail.com",
+    "portfolio": "https://codenut-dev.vercel.app",
+    "github": "https://github.com/KainNhantumbo",
+    "linkedin": "https://www.linkedin.com/in/kain-nhantumbo?locale=en_US"
+  },
+  "metadata": {
+    "name": "Kanbanate",
+    "copyright_notice": "© 2023 Kanbanate | All Rights Reserved."
+  },
+  "keywords": [
+    "kanban",
+    "kanban projects application",
+    "kanbanate react application"
+  ],
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.6.7"
+  },
+  "license": {
+    "name": "Apache License Version 2.0",
+    "url": " http://www.apache.org/licenses"
+  },
+  "repository": "https://github.com/KainNhantumbo/kanbanate",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
