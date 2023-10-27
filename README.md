@@ -1,27 +1,94 @@
-# React + TypeScript + Vite
+# Kanbanate (React.JS + Typescript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Kanbanate** app repository, app built with React.JS and Typescript, and of course, with a flavour of other awesome community open source packages.
 
-Currently, two official plugins are available:
+<!-- **Access this app live at: [https://choconotey-demo.vercel.app](https://choconotey-demo.vercel.app)** -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- ## **Here are some screenshots:**
 
-## Expanding the ESLint configuration
+|           Light Theme (Desktop)           |           Dark Theme (Desktop)           |
+| :---------------------------------------: | :--------------------------------------: |
+| ![](./src/assets/demo-light.png?raw=true) | ![](./src/assets/demo-dark.png?raw=true) |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+|               Light Theme (Mobile)               |               Dark Theme (Mobile)               |
+| :----------------------------------------------: | :---------------------------------------------: |
+| ![](./src/assets/demo-light-mobile.png?raw=true) | ![](./src/assets/demo-dark-mobile.png?raw=true) | -->
 
-- Configure the top-level `parserOptions` property like this:
+## Project status
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+Note: This project is under the initial stage of its development. Further details of its bulding, software architecture and features will be given as the app grows.
+
+## Project structure
+
+```
+$PROJECT_ROOT
+│
+├── public
+└── src
+    ├── assets
+    ├── components
+    ├── context
+    ├── libs
+    ├── routes
+    ├── shared
+    ├── styles
+    └── types
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<!-- ## Features Log
+
+
+### - Version v1.0.0
+- Realtime preview (WYSIWYG) note editor and a clean and simple interface to get a distraction-free writing experience.
+- Support [CommonMark Spec](https://spec.commonmark.org/0.29/) and [GitHub Flavoured Markdown Spec](https://github.github.com/gfm/).
+- Installable on all platforms as PWA (Progressive Web Application).
+- Support html parsing to improve your writing efficiency.
+- Output **HTML**, **Plan Text** and **markdown** note content.
+- Color themes: **Light** and **Dark**.
+- Handle create, read, update and delete notes, folder and users on the database.
+- Handle user login, registration and authentication with jwt (JSON web tokens) strategy.
+- Store all data in Mongo DB, handled by a separated Node.JS with Express.JS server application. -->
+
+### Scripts for testing and local setup
+
+Make sure you have installed **Node.js (v18.17.0 or later recommended) which also comes with npm v9.6.7**.\
+In the project directory, you can run in terminal:
+
+```bash
+ npm run dev
+```
+
+Runs the app in the development mode and the server will reload when you make changes to the source code.
+
+```bash
+npm run build
+```
+
+Builds the app for production to the **dist folder**.
+
+```bash
+npm run start
+```
+
+Builds and starts the server in prodution.
+
+## Contact
+
+E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an e-mail')\
+Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
+Portfolio: [https://portifolio-dev-mu.vercel.app](https://portifolio-dev-mu.vercel.app 'See my portfolio website')\
+My Blog: [https://publish-it-programming.vercel.app](https://publish-it-programming.vercel.app 'Visit my blog site')
+
+#### If you like this project, let me know by leaving a star on this repository so I can keep improving this app.😊😘
+
+Best regards, Kain Nhantumbo.\
+**Made with ❤ React + Vite and Typescript**
+
+## License
+
+Licensed under Apache License 2.0. All rights reserved.\
+Copyright &copy; 2023 Kain Nhantumbo.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
