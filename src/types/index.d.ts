@@ -56,5 +56,6 @@ export type Action = { type: string; payload: State };
 export type State = {
   windowInnerSize: { width: number; height: number };
   isAboutModal: boolean,
-  prompt: Modal
+  prompt: Modal,
+  toast: Modal,
 };

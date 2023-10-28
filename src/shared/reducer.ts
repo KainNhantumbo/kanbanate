@@ -4,7 +4,8 @@ import { Action, State } from '@/types';
 export const initialState: State = {
   windowInnerSize: { width: 0, height: 0 },
   isAboutModal: false,
-  prompt: { title: '', status: false, message: '' }
+  prompt: { title: '', status: false, message: '' },
+  toast: { title: '', status: false, message: '' }
 };
 
 export function reducer(state: State, action: Action): State {
@@ -14,6 +15,9 @@ export function reducer(state: State, action: Action): State {
 
     case actions.PROMPT:
       return { ...state, prompt: action.payload.prompt };
+
+    case actions.TOAST:
+      return { ...state, toast: action.payload.toast };
 
     case actions.WINDOW_INNER_SIZE:
       return { ...state, windowInnerSize: action.payload.windowInnerSize };
