@@ -1,17 +1,17 @@
-import Layout from '@/components/Layout';
-import { Tooltip } from 'react-tooltip';
-import { app_features, metadata } from '@/shared/data';
-import { _home as Container } from '@/styles/routes/_home';
-import { Link } from 'react-router-dom';
-import { m as motion } from 'framer-motion';
 import {
   RiGithubLine,
   RiLinkedinBoxLine,
   RiMailLine,
   RiProfileLine
 } from 'react-icons/ri';
+import { Tooltip } from 'react-tooltip';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/Layout';
+import { m as motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
+import { app_features, metadata } from '@/shared/data';
 import { useThemeContext } from '@/context/ThemeContext';
+import { _home as Container } from '@/styles/routes/_home';
 
 export default function Home() {
   const theme = useTheme();
