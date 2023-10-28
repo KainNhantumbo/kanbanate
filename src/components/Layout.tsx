@@ -1,9 +1,9 @@
 import Header from './Header';
 import Footer from './Footer';
-// import Toast from './modals/Toast';
-// import Cookies from './modals/Cookies';
-// import { PromptModal } from './modals/Prompt';
-import { ReactNode, useEffect } from 'react';
+import Toast from './Toast';
+import Cookies from './Cookies';
+import Prompt from './Prompt';
+import type { ReactNode } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
 
@@ -20,11 +20,9 @@ function Layout({ children, renderHeader, renderFooter }: Props) {
     <MotionConfig reducedMotion='user'>
       <LazyMotion strict={true} features={domAnimation}>
         {renderHeader ? <Header /> : null}
-        {/* <Cookies /> */}
-        {/* <Toast key={state.toast.title.split(' ').join('') || undefined} /> */}
-        {/* <PromptModal
-          key={state.prompt.title.split(' ').join('') || undefined}
-        /> */}
+        <Cookies />
+        <Toast key={state.toast.title.split(' ').join('') || undefined} />
+        <Prompt key={state.prompt.title.split(' ').join('') || undefined} />
         {children}
         {renderFooter ? <Footer /> : null}
       </LazyMotion>
