@@ -1,12 +1,11 @@
 import actions from '@/shared/actions';
 import { RiCloseLine } from 'react-icons/ri';
-import { useAppContext } from '@/context/AppContext';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _toast as Container } from '@/styles/modules/_toast';
 import { useEffect } from 'react';
 
 export default function Toast() {
-  const { state, dispatch } = useAppContext();
+
 
   useEffect(() => {
     if (!state.toast.closeOnDelay) return;

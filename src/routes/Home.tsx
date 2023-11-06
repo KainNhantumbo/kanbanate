@@ -10,12 +10,11 @@ import Layout from '@/components/Layout';
 import { m as motion } from 'framer-motion';
 import { useTheme } from 'styled-components';
 import { app_features, metadata } from '@/shared/data';
-import { useThemeContext } from '@/context/ThemeContext';
 import { _home as Container } from '@/styles/routes/_home';
 
 export default function Home() {
   const theme = useTheme();
-  const { colorScheme } = useThemeContext();
+ 
   const { appName, repository, author } = metadata;
 
   return (
@@ -142,27 +141,6 @@ export default function Home() {
                     id={author.linkedin}
                   />
                 </a>
-              </div>
-            </section>
-
-            <section className='call-to-action'>
-              <h2>
-                <span>Ready to get started?</span>
-              </h2>
-              <p>
-                Don't have an account yet? Sign up for a free account and take
-                your produtivity to next level...
-              </p>
-
-              <div className='action-buttons'>
-                <Link to={'/boards'}>
-                  <motion.button
-                    whileTap={{ scale: 0.8 }}
-                    whileHover={{ scale: 1.05 }}
-                    className='browser-button'>
-                    <span>Get started</span>
-                  </motion.button>
-                </Link>
               </div>
             </section>
           </article>

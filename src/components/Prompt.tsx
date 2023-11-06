@@ -1,10 +1,8 @@
 import actions from '@/shared/actions';
-import { useAppContext } from '@/context/AppContext';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _prompt as Container } from '@/styles/modules/_prompt';
 
 export default function Prompt() {
-  const { state, dispatch } = useAppContext();
 
   return (
     <AnimatePresence>

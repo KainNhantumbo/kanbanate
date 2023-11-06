@@ -6,12 +6,11 @@ import {
 } from 'react-icons/ri';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _about as Container } from '@/styles/modules/_about';
-import { useAppContext } from '@/context/AppContext';
 import { metadata } from '@/shared/data';
 import actions from '@/shared/actions';
 
 export default function About() {
-  const { state, dispatch } = useAppContext();
+
   const { appName, version, copyright, license, author, contacts } =
     metadata;
 

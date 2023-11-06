@@ -6,24 +6,27 @@ import {
   Location
 } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import logoImage from '@/assets/logo-192x192.png';
+import logoImage from '@/assets/boards-logo.png';
 import { metadata, nav_anchors } from '../shared/data';
-import { useAppContext } from '../context/AppContext';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _header as Container } from '../styles/modules/_header';
 import { RiMenuLine, RiCloseLine, RiArrowRightLine } from 'react-icons/ri';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/state/store';
 
 export default function Header() {
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const navigate: NavigateFunction = useNavigate();
   const location: Location = useLocation();
-  const { state } = useAppContext();
+  const windowInnerSize = useSelector(
+    (state: RootState) => state.innerWindowSize
+  );
 
   const toggleMenu = (): void => setIsMenu((current) => !current);
 
   useEffect((): void => {
-    state.windowInnerSize.width > 770 ? setIsMenu(true) : setIsMenu(false);
-  }, [state.windowInnerSize]);
+    windowInnerSize.width > 770 ? setIsMenu(true) : setIsMenu(false);
+  }, [windowInnerSize]);
 
   return (
     <Container>
@@ -74,9 +77,7 @@ export default function Header() {
                   whileTap={{ scale: 0.9 }}
                   title='Go to workspace'
                   className='user-account'
-                  onClick={() =>
-                    navigate(`/workspace?tab=all-notes&folder=none`)
-                  }>
+                  onClick={() => navigate(`/boards`)}>
                   <span>Go to Workspace</span>
                   <RiArrowRightLine />
                 </motion.button>

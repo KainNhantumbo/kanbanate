@@ -8,7 +8,7 @@ export const _header = styled.header`
   top: 0;
   left: 0;
   backdrop-filter: blur(5px);
-  background: rgba(${({ theme }) => theme.foreground}, 0.8);
+  background:transparent;
   padding: 12px 8px;
   font-weight: 500;
   font-size: 0.9rem;
@@ -49,9 +49,8 @@ export const _header = styled.header`
     }
 
     img {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
+      width: 100%;
+      max-width: 20px;
       object-fit: cover;
     }
 

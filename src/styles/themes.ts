@@ -18,8 +18,8 @@ export const dark_default: Theme = {
   primary_c: '8, 216, 78',
   foreground: '39, 40, 45',
   background: '27, 27, 31',
-  white: '255, 255, 255',
-  black: '12, 3, 13',
+  white: '240, 240,240',
+  black: '25, 25, 28',
   error: '253, 56, 79',
-  font: '95, 99, 104',
+  font: '198, 197, 205'
 };

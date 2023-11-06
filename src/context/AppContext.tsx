@@ -1,42 +1,22 @@
-import {
-  ReactNode,
-  useContext,
-  useReducer,
-  Dispatch,
-  createContext,
-  useEffect
-} from 'react';
-import actions from '@/shared/actions';
-import { Action, State } from '@/types';
+import { store } from '@/state/store';
+import { Provider } from 'react-redux';
 import ThemeContext from './ThemeContext';
-import compareObjects from 'lodash.isequal';
-import { initialState, reducer } from '@/shared/reducer';
-import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { ReactNode, useEffect } from 'react';
+import { updateSizes } from '@/state/inner-window-size/innerWindowSizeSlice';
+import { useDispatch } from 'react-redux';
 
 type Props = { children: ReactNode };
 
-type Context = { state: State; dispatch: Dispatch<Action> };
-
-const context = createContext<Context>({
-  state: initialState,
-  dispatch: () => {}
-});
-
 export default function AppContext({ children }: Props) {
-  const navigate: NavigateFunction = useNavigate();
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const dispatch = useDispatch();
 
   const computeInnerWindowSize = (): void => {
-    dispatch({
-      type: actions.WINDOW_INNER_SIZE,
-      payload: {
-        ...state,
-        windowInnerSize: {
-          width: Number(window.innerWidth.toFixed(0)),
-          height: Number(window.innerHeight.toFixed(0))
-        }
-      }
-    });
+    dispatch(
+      updateSizes({
+        width: Number(window.innerWidth.toFixed(0)),
+        height: Number(window.innerHeight.toFixed(0))
+      })
+    );
   };
 
   useEffect(() => {
@@ -48,12 +28,8 @@ export default function AppContext({ children }: Props) {
   }, []);
 
   return (
-    <context.Provider value={{ state, dispatch }}>
+    <Provider store={store}>
       <ThemeContext>{children}</ThemeContext>
-    </context.Provider>
+    </Provider>
   );
-}
-
-export function useAppContext() {
-  return useContext<Context>(context);
 }

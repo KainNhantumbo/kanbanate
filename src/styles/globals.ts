@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     position: relative;
     color: rgb(${({ theme }) => theme.font});
-    background: rgb(${({ theme }) => theme.foreground});
+    background: rgb(${({ theme }) => theme.background});
     font-family: Inter, Roboto, 'Open Sans','Helvetica Neue', -apple-system, sans-serif;
     margin: 0;
     -webkit-font-smoothing: antialiased;

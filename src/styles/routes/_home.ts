@@ -6,6 +6,7 @@ export const _home = styled.main`
   width: 100%;
   position: relative;
   min-height: 50vh;
+  background: rgb(${({ theme }) => theme.background});
 
   * {
     ::selection {
@@ -255,50 +256,6 @@ export const _home = styled.main`
       }
     }
 
-    .call-to-action {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      background: rgb(${({ theme }) => theme.background});
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(${({ theme }) => theme.font}, 0.15);
-
-      h2 {
-        font-size: 2.8rem;
-        font-weight: 600;
-        line-height: 3.8rem;
-        text-align: center;
-        width: 100%;
-        max-width: 600px;
-        align-self: center;
-        font-family: 'Zilla Slab', serif;
-      }
-
-      p {
-        line-height: 1.6rem;
-        text-align: center;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        max-width: 80px;
-        max-height: 80px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin: 10px auto;
-        box-shadow: 0 12px 35px rgba(${({ theme }) => theme.black}, 0.2);
-      }
-
-      .action-buttons {
-        button {
-          ${BaseButton}
-          border-radius: 8px;
-          padding: 8px 12px;
-        }
-      }
-    }
+    
   }
 `;

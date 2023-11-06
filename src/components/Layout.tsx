@@ -4,7 +4,6 @@ import Toast from './Toast';
 import Cookies from './Cookies';
 import Prompt from './Prompt';
 import type { ReactNode } from 'react';
-import { useAppContext } from '../context/AppContext';
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
 
 interface Props {

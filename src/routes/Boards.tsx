@@ -1,10 +1,9 @@
 import Layout from '@/components/Layout';
-import { useAppContext } from '@/context/AppContext';
+import {} from '@dnd-kit/core';
+import {} from '@dnd-kit/sortable';
 import { _boards as Container } from '@/styles/routes/_boards';
-import actions from '@/shared/actions';
 
 export default function Boards() {
-  const { state, dispatch } = useAppContext();
 
   return (
     <Layout>

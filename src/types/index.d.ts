@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 
 export type Theme = {
@@ -28,7 +27,36 @@ export type Modal = {
   message: string;
   closeOnDelay?: boolean;
   actionButtonMessage?: string;
-  handleFunction?: (data?: any) => void | Promise<void>;
+  handleFunction?: (data?: unknown) => void | Promise<void>;
+};
+
+export type Preferences = {
+  author: { name: string; picture: string };
+  theme: ColorScheme;
+};
+
+export type Project = {
+  id: string;
+  name: string;
+  deleted: boolean;
+  description: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type Task = {
+  id: string;
+  boardId: string;
+  title: string;
+  description: string;
+  content: string;
+  completed: string;
+  color: string;
+  author: { name: string; picture: string };
+  priority: 'none' | 'low' | 'medium' | 'high';
+  tags: Array<{ id: string; content: string }>;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
 export type Query = {
@@ -55,7 +83,7 @@ export type Action = { type: string; payload: State };
 
 export type State = {
   windowInnerSize: { width: number; height: number };
-  isAboutModal: boolean,
-  prompt: Modal,
-  toast: Modal,
+  isAboutModal: boolean;
+  prompt: Modal;
+  toast: Modal;
 };

@@ -11,12 +11,12 @@ const AppRouter = lazy(() => import('./AppRouter'));
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Suspense fallback={<Loader />}>
-      <Router>
-        <AppContext>
+    <Router>
+      <AppContext>
+        <Suspense fallback={<Loader />}>
           <AppRouter />
-        </AppContext>
-      </Router>
-    </Suspense>
+        </Suspense>
+      </AppContext>
+    </Router>
   </React.StrictMode>
 );
