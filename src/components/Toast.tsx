@@ -1,30 +1,28 @@
-import actions from '@/shared/actions';
 import { RiCloseLine } from 'react-icons/ri';
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _toast as Container } from '@/styles/modules/_toast';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/state/store';
+import { updateToast } from '@/state/toast/toastSlice';
 
 export default function Toast() {
-
+  const dispatch = useDispatch();
+  const toast = useSelector((state: RootState) => state.toast);
 
   useEffect(() => {
-    if (!state.toast.closeOnDelay) return;
+    if (!toast.closeOnDelay) return;
     const debounceTimer = setTimeout(() => {
-      dispatch({
-        type: actions.TOAST,
-        payload: {
-          ...state,
-          toast: { title: '', message: '', status: false }
-        }
-      });
+      dispatch(updateToast({ title: '', message: '', status: false }));
     }, 5000);
 
     return () => clearTimeout(debounceTimer);
-  }, [state.toast]);
+  }, [toast]);
 
   return (
     <AnimatePresence>
-      {state.toast.status && (
+      {toast.status && (
         <Container>
           <motion.section
             className='dialog-modal'
@@ -48,24 +46,16 @@ export default function Toast() {
                   aria-label='Close and dismiss'
                   className='box-btn_close'
                   onClick={() =>
-                    dispatch({
-                      type: actions.TOAST,
-                      payload: {
-                        ...state,
-                        toast: { ...state.toast, status: false }
-                      }
-                    })
+                    dispatch(updateToast({ ...toast, status: false }))
                   }>
                   <RiCloseLine />
                 </motion.button>
-                <span className='prompt-title'>{state.toast.title}</span>
+                <span className='prompt-title'>{toast.title}</span>
                 <section className='prompt-message'>
-                  {state.toast.message.includes('\n') ? (
-                    state.toast.message
-                      .split('\n')
-                      .map((phrase) => <p>{phrase}</p>)
+                  {toast.message.includes('\n') ? (
+                    toast.message.split('\n').map((phrase) => <p>{phrase}</p>)
                   ) : (
-                    <p>{state.toast.message}</p>
+                    <p>{toast.message}</p>
                   )}
                 </section>
               </div>
@@ -77,27 +67,20 @@ export default function Toast() {
                   whileTap={{ scale: 0.9 }}
                   className='prompt-cancel'
                   onClick={() =>
-                    dispatch({
-                      type: actions.TOAST,
-                      payload: {
-                        ...state,
-                        toast: { ...state.toast, status: false }
-                      }
-                    })
+                    dispatch(updateToast({ ...toast, status: false }))
                   }>
                   <span>Dismiss</span>
                 </motion.button>
 
-                {!state.toast.handleFunction ||
-                !state.toast.actionButtonMessage ? null : (
+                {!toast.handleFunction || !toast.actionButtonMessage ? null : (
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}
-                    title={state.toast.actionButtonMessage}
-                    aria-label={state.toast.actionButtonMessage}
+                    title={toast.actionButtonMessage}
+                    aria-label={toast.actionButtonMessage}
                     className='prompt-accept'
-                    onClick={state.toast.handleFunction}>
-                    <span>{state.toast.actionButtonMessage}</span>
+                    onClick={toast.handleFunction}>
+                    <span>{toast.actionButtonMessage}</span>
                   </motion.button>
                 )}
               </div>

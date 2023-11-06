@@ -7,26 +7,27 @@ import {
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _about as Container } from '@/styles/modules/_about';
 import { metadata } from '@/shared/data';
-import actions from '@/shared/actions';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/state/store';
+import { updateAboutModal } from '@/state/simple-modals/simpleModalsSlice';
 
 export default function About() {
+  const dispatch = useDispatch();
+  const isAboutModal = useSelector(
+    (state: RootState) => state.simpleModals.isAboutModal
+  );
 
-  const { appName, version, copyright, license, author, contacts } =
-    metadata;
+  const { appName, version, copyright, license, author, contacts } = metadata;
 
   return (
     <AnimatePresence>
-      {state.isAboutModal && (
+      {isAboutModal && (
         <Container
           className='main'
           onClick={(e: any) => {
             const isTarget = e.target.classList.contains('main');
-            if (isTarget) {
-              dispatch({
-                type: actions.ABOUT_MODAL,
-                payload: { ...state, isAboutModal: false }
-              });
-            }
+            if (isTarget) return dispatch(updateAboutModal(false));
           }}>
           <motion.section
             className='dialog-modal'
@@ -81,12 +82,7 @@ export default function About() {
               <button
                 title='Close Panel'
                 className='box-btn'
-                onClick={() =>
-                  dispatch({
-                    type: actions.ABOUT_MODAL,
-                    payload: { ...state, isAboutModal: false }
-                  })
-                }>
+                onClick={() => dispatch(updateAboutModal(false))}>
                 <RiCloseLine />
               </button>
             </div>
