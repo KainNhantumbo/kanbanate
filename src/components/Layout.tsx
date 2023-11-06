@@ -5,6 +5,8 @@ import Cookies from './Cookies';
 import Prompt from './Prompt';
 import type { ReactNode } from 'react';
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/state/store';
 
 interface Props {
   children: ReactNode;
@@ -13,15 +15,18 @@ interface Props {
 }
 
 function Layout({ children, renderHeader, renderFooter }: Props) {
-  const { state } = useAppContext();
+  const { toast, prompt } = useSelector((state: RootState) => ({
+    toast: state.toast,
+    prompt: state.prompt
+  }));
 
   return (
     <MotionConfig reducedMotion='user'>
       <LazyMotion strict={true} features={domAnimation}>
         {renderHeader ? <Header /> : null}
         <Cookies />
-        <Toast key={state.toast.title.split(' ').join('') || undefined} />
-        <Prompt key={state.prompt.title.split(' ').join('') || undefined} />
+        <Toast key={toast.title.split(' ').join('') || undefined} />
+        <Prompt key={prompt.title.split(' ').join('') || undefined} />
         {children}
         {renderFooter ? <Footer /> : null}
       </LazyMotion>

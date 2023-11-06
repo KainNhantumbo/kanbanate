@@ -78,12 +78,3 @@ export type InputEvents =
   | ChangeEvent<HTMLTextAreaElement>;
 
 export type SubmitEvent = FormEvent<HTMLFormElement>;
-
-export type Action = { type: string; payload: State };
-
-export type State = {
-  windowInnerSize: { width: number; height: number };
-  isAboutModal: boolean;
-  prompt: Modal;
-  toast: Modal;
-};

@@ -10,7 +10,7 @@ import { metadata } from '@/shared/data';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/state/store';
-import { updateAboutModal } from '@/state/simple-modals/simpleModalsSlice';
+import { updateAboutModal } from '@/state/slices/simpleModalsSlice';
 
 export default function About() {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import toastReducer from './toast/toastSlice';
-import promptReducer from './prompt/promptSlice';
-import simpleModalsReducer from './simple-modals/simpleModalsSlice';
-import innerWindowSizeReducer from './inner-window-size/innerWindowSizeSlice';
+import toastReducer from './slices/toastSlice';
+import promptReducer from './slices/promptSlice';
+import simpleModalsReducer from './slices/simpleModalsSlice';
+import innerWindowSizeReducer from './slices/innerWindowSizeSlice';
 
 export const store = configureStore({
   reducer: {

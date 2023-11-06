@@ -2,7 +2,7 @@ import { store } from '@/state/store';
 import { Provider } from 'react-redux';
 import ThemeContext from './ThemeContext';
 import { ReactNode, useEffect } from 'react';
-import { updateSizes } from '@/state/inner-window-size/innerWindowSizeSlice';
+import { updateSizes } from '@/state/slices/innerWindowSizeSlice';
 import { useDispatch } from 'react-redux';
 
 type Props = { children: ReactNode };

@@ -3,8 +3,7 @@ import {
   useContext,
   ReactNode,
   useState,
-  useEffect,
-  memo
+  useEffect
 } from 'react';
 import { Theme, ColorScheme } from '../types';
 import { GlobalStyles } from '../styles/globals';
@@ -23,8 +22,7 @@ const context = createContext<Context>({
   changeColorScheme: () => {}
 });
 
-function ThemeContext({ children }: Props) {
-  const { state, dispatch } = useAppContext();
+export default function ThemeContext({ children }: Props) {
   const [currentTheme, setCurrentTheme] = useState<Theme>(light_default);
   const [colorScheme, setColorScheme] = useState<ColorScheme>({
     mode: 'auto',
@@ -102,8 +100,6 @@ function ThemeContext({ children }: Props) {
     </ThemeProvider>
   );
 }
-
-export default memo(ThemeContext);
 
 export function useThemeContext() {
   return useContext(context);

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/state/store';
-import { updateToast } from '@/state/toast/toastSlice';
+import { updateToast } from '@/state/slices/toastSlice';
 
 export default function Toast() {
   const dispatch = useDispatch();

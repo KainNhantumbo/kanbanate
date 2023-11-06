@@ -3,7 +3,7 @@ import { _prompt as Container } from '@/styles/modules/_prompt';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/state/store';
-import { updatePrompt } from '@/state/prompt/promptSlice';
+import { updatePrompt } from '@/state/slices/promptSlice';
 
 export default function Prompt() {
   const dispatch = useDispatch();
