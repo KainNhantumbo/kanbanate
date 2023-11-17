@@ -1,53 +1,7 @@
-# Kanbanate (React.JS + Typescript)
+# Vite App Template (React.JS + Typescript)
 
-Welcome to **Kanbanate** app repository, app built with React.JS and Typescript, and of course, with a flavour of other awesome community open source packages.
+Welcome to **Vite App Template** app repository, this is an app template for future projects. Feel free to fork it to use on your own
 
-<!-- **Access this app live at: [https://choconotey-demo.vercel.app](https://choconotey-demo.vercel.app)** -->
-
-<!-- ## **Here are some screenshots:**
-
-|           Light Theme (Desktop)           |           Dark Theme (Desktop)           |
-| :---------------------------------------: | :--------------------------------------: |
-| ![](./src/assets/demo-light.png?raw=true) | ![](./src/assets/demo-dark.png?raw=true) |
-
-|               Light Theme (Mobile)               |               Dark Theme (Mobile)               |
-| :----------------------------------------------: | :---------------------------------------------: |
-| ![](./src/assets/demo-light-mobile.png?raw=true) | ![](./src/assets/demo-dark-mobile.png?raw=true) | -->
-
-## Project status
-
-Note: This project is under the initial stage of its development. Further details of its bulding, software architecture and features will be given as the app grows.
-
-## Project structure
-
-```
-$PROJECT_ROOT
-│
-├── public
-└── src
-    ├── assets
-    ├── components
-    ├── context
-    ├── libs
-    ├── routes
-    ├── shared
-    ├── styles
-    └── types
-```
-
-<!-- ## Features Log
-
-
-### - Version v1.0.0
-- Realtime preview (WYSIWYG) note editor and a clean and simple interface to get a distraction-free writing experience.
-- Support [CommonMark Spec](https://spec.commonmark.org/0.29/) and [GitHub Flavoured Markdown Spec](https://github.github.com/gfm/).
-- Installable on all platforms as PWA (Progressive Web Application).
-- Support html parsing to improve your writing efficiency.
-- Output **HTML**, **Plan Text** and **markdown** note content.
-- Color themes: **Light** and **Dark**.
-- Handle create, read, update and delete notes, folder and users on the database.
-- Handle user login, registration and authentication with jwt (JSON web tokens) strategy.
-- Store all data in Mongo DB, handled by a separated Node.JS with Express.JS server application. -->
 
 ### Scripts for testing and local setup
 

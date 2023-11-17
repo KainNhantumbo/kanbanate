@@ -7,6 +7,12 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     max-width: 100%;
+    background: rgb(${({ theme }) => theme.background});
+
+    ::selection {
+      background: rgba(${({ theme }) => theme.font}, 0.1);
+      color: rgb(${({ theme }) => theme.primary_a});
+    }
   }
   
   label {
@@ -60,4 +66,22 @@ export const GlobalStyles = createGlobalStyle`
     min-width: 44px;
     min-height: 44px;
   }
+
+  .tooltip-class {
+    border-radius: 8px;
+    color: rgb(${({ theme }) => theme.white});
+    background: rgba(${({ theme }) => theme.primary_a}, 0.8);
+    border: 1px solid rgba(${({ theme }) => theme.white}, 0.9);
+    backdrop-filter: blur(20px);
+    font-family: 'Inter';
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .tooltip-border-class {
+    border-right: 1px solid rgba(${({ theme }) => theme.white}, 0.9);
+    border-bottom: 1px solid rgba(${({ theme }) => theme.white}, 0.9);
+  }
+
 `;

@@ -16,8 +16,8 @@ import { RootState } from '@/state/store';
 
 export default function Header() {
   const [isMenu, setIsMenu] = useState<boolean>(false);
-  const navigate: NavigateFunction = useNavigate();
-  const location: Location = useLocation();
+  const navigate= useNavigate();
+  const location = useLocation();
   const windowInnerSize = useSelector(
     (state: RootState) => state.innerWindowSize
   );

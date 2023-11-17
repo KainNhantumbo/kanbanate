@@ -12,7 +12,7 @@ export const metadata = {
   websiteName: Package.website_name,
   tags: Package.keywords.join(' '),
   websiteUrl: Package.url,
-  description: 'A simple taking notes application to fit your daily needs.',
+  description: '',
   copyright: `${new Date().getFullYear()} ${Package.metadata.name}`,
   contacts: [
     {
@@ -48,9 +48,9 @@ export const footerAnchors = [
   { name: 'Privacy Policy', anchor: '/docs/privacy-policy' },
   { name: 'Contact', anchor: '/docs/contact' },
   { name: 'FAQ', anchor: '/docs/faq' },
-  { name: 'Donate', anchor: 'https://www.buymeacoffee.com/nhantumbokU' },
+  { name: 'Donate', anchor: metadata.author.donate },
   { name: 'Github', anchor: metadata.repository },
-  { name: 'Portfolio', anchor: 'https://portifolio-dev-mu.vercel.app' }
+  { name: 'Portfolio', anchor: metadata.author.portfolio }
 ].sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export const sortOptions: Option[] = [
@@ -66,10 +66,4 @@ export const colorSchemeOptions = [
   { label: 'Light Theme', value: `{"mode":"manual", "scheme": "light"}` },
   { label: 'Dark Theme', value: `{"mode":"manual", "scheme": "dark"}` },
   { label: 'Automatic', value: `{"mode":"auto", "scheme": "dark"}` }
-];
-
-export const TaskBoardsMap = [
-  { value: 'todo', data: { label: 'To Do', color: '#3D9A50' } },
-  { value: 'in_progress', data: { label: 'In Progress', color: '#FBBD08' } },
-  { value: 'done', data: { label: 'Done', color: '#C62A2F' } }
 ];

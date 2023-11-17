@@ -31,33 +31,10 @@ export type Modal = {
 };
 
 export type Preferences = {
-  author: { name: string; picture: string };
+  author: { name: string; picture?: string };
   theme: ColorScheme;
 };
 
-export type Project = {
-  id: string;
-  name: string;
-  deleted: boolean;
-  description: string;
-  createdAt: Date;
-  updatedAt: Date;
-};
-
-export type Task = {
-  id: string;
-  boardId: string;
-  title: string;
-  description: string;
-  content: string;
-  completed: string;
-  color: string;
-  author: { name: string; picture: string };
-  priority: 'none' | 'low' | 'medium' | 'high';
-  tags: Array<{ id: string; content: string }>;
-  createdAt: Date;
-  updatedAt: Date;
-};
 
 export type Query = {
   search: string;
@@ -67,10 +44,6 @@ export type Query = {
 };
 
 export type Option = { value: string; label: string };
-
-export type Settings = {
-  theme: { scheme: 'light' | 'dark'; automatic: boolean };
-};
 
 export type InputEvents =
   | ChangeEvent<HTMLInputElement>

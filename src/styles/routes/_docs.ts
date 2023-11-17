@@ -5,7 +5,6 @@ export const _docs = styled.main`
   display: grid;
   align-items: center;
   justify-items: center;
-  background: rgb(${({ theme }) => theme.background});
 
   .wrapper-container {
     font-size: 1rem;

@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
       <Container>
         <section className='wrapper-container'>
           <h1>Privacy Policy</h1>
-          <p>Last updated: October 05, 2023</p>
+          <p>Last updated: November 17, 2023</p>
           <p>
             This Privacy Policy describes Our policies and procedures on the
             collection, use and disclosure of your information when you use the
