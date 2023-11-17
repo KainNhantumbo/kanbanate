@@ -1,5 +1,4 @@
-import { store } from '@/state/store';
-import { Provider } from 'react-redux';
+
 import ThemeContext from './ThemeContext';
 import { ReactNode, useEffect } from 'react';
 import { updateSizes } from '@/state/slices/innerWindowSizeSlice';
@@ -27,9 +26,5 @@ export default function AppContext({ children }: Props) {
     };
   }, []);
 
-  return (
-    <Provider store={store}>
-      <ThemeContext>{children}</ThemeContext>
-    </Provider>
-  );
+  return <ThemeContext>{children}</ThemeContext>;
 }

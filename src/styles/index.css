@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* light colors */
+    --color-error: 253 56 79;
+    --color-font: 95 99 104;
+    --color-font-dimmed: 95 99 104;
+    --color-black: 12 3 13;
+    --color-white: 255 255 255;
+    --color-primary: 253 200 134;
+    --color-secondary: 255 71 71;
+    --color-background: 250 250 250;
+    --color-foreground: 255 255 255;
+    --color-primary-shade: 228 113 49;
+    --color-secondary-shade: 199 158 107;
+    --color-background-shade: 245 242 234;
+    --color-foreground-shade: 240 240 240;
+
+    /* dark colors */
+    --color-error: 253 56 79;
+    --color-font: 198 197 205;
+    --color-font-dimmed: 25 25 28;
+    --color-black: 25 25 28;
+    --color-white: 240 240 240;
+    --color-primary: 126 67 24;
+    --color-secondary: 255 71 71;
+    --color-background: 27 27 31;
+    --color-foreground: 39 40 45;
+    --color-primary-shade: 228 113 49;
+    --color-secondary-shade: 221 207 136;
+    --color-background-shade: 32 33 36;
+    --color-foreground-shade: 34 37 41;
+  }
+}

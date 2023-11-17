@@ -15,10 +15,8 @@ interface Props {
 }
 
 function Layout({ children, renderHeader, renderFooter }: Props) {
-  const { toast, prompt } = useSelector((state: RootState) => ({
-    toast: state.toast,
-    prompt: state.prompt
-  }));
+  const toast = useSelector((state: RootState) => (state.toast));
+  const prompt = useSelector((state: RootState) => (state.prompt));
 
   return (
     <MotionConfig reducedMotion='user'>

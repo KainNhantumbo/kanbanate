@@ -4,8 +4,8 @@ import { _footer as Container } from '../styles/modules/_footer';
 
 export default function Footer() {
   return (
-    <Container>
-      <nav>
+    <footer className='w-[100%] max-w-md font-[500] text-base flex flex-wrap  justify-between align-middle  gap-5 p-5 selection:bg- selection:colo'>
+      <nav role='navigation'>
         {footerAnchors.map((item, index) => (
           <Link key={index.toString()} to={item.anchor}>
             <span>{item.name}</span>
@@ -13,6 +13,6 @@ export default function Footer() {
         ))}
       </nav>
       <p className='copyright-sentence'>&copy; {metadata.copyright}</p>
-    </Container>
+    </footer>
   );
 }

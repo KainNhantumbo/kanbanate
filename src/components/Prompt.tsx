@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { m as motion, AnimatePresence } from 'framer-motion';
 import { _prompt as Container } from '@/styles/modules/_prompt';
 import { useDispatch } from 'react-redux';
